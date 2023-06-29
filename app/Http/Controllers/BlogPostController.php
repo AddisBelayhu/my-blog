@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+
+use Add\Models\BlogPost;
 use Illuminate\Http\Request;
+
 
 class BlogPostController extends Controller
 {
     public function index()
     {
-        // show all blog posts
+        $posts = BlogPost::all(); //fetch all blog posts from DB
+	    return $posts; //returns the fetched posts
     }
 
     public function create()
@@ -25,6 +29,7 @@ class BlogPostController extends Controller
     public function show(BlogPost $blogPost)
     {
         //show a blog post
+        return $blogPost;
     }
 
     
